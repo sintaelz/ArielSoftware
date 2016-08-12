@@ -5,31 +5,46 @@
 #include <stdio.h>
 #include <string>
 
-short choice;
+int choice;
 
 int main()
 {
-  cout << "Que tipo de dispositivo deseas construir? Escoge el numero del dipositivo" << endl << "1. Laptop" << endl << "2. Desktop" << endl << "3. Netbook" << endl << "4. Tablet" << endl;
-  while (choice <= 0 && choice >= 5)
-  cin >> choice
-  
+  cout << "Que tipo de dispositivo deseas construir? Escoge el numero del dipositivo" << endl << "1. Laptop" << endl << "2. Desktop" << endl << "3. Netbook" << endl << "4. Tablet" << endl << endl;
+
+  cin >> choice;
+  while (choice <= 0 || choice >= 5)
+  {
+    cout << "Tu numero no esta entre el 1 y el 4, favor de reingresar el numero" << endl;
+    cin >> choice;
+  }
+
+  cout << endl;
   switch (choice)
   {
-    case'1':
-    Laptop *l1 = new Laptop;
-    break;
-
-    case'2':
-    Desktop *d1 = new Desktop;
-    break;
-
-    case'3':
-    Netbook *n1 = new Netbook;
-    break;
-
-    case'4':
-    Tablet *t1 = new Tablet;
-    break;
+    case 1:
+    {
+      Laptop *l1 = new Laptop();
+      cout << endl;
+      break;
+    }
+    case 2:
+    {
+      Desktop *d1 = new Desktop();
+      cout << endl;
+      break;
+    }
+    case 3:
+    {
+      Netbook *n1 = new Netbook();
+      cout << endl;
+      break;
+    }
+    case 4:
+    {
+      Tablet *t1 = new Tablet();
+      cout << endl;
+      break;
+    }
   }
 
 }

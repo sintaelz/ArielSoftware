@@ -10,20 +10,20 @@ Netbook::Netbook()
 
 void Netbook::printComponentes()
 {
-  cout << "Juntando componentes necesarios para construir la desktop" << endl;
+  cout << "Juntando componentes necesarios para construir la netbook..." << endl << endl;
 }
 
 void Netbook::printEnsamblado()
 {
-  cout << "Ensamblando componentes para la desktop" << endl;
+  cout << "Ensamblando componentes para la netbook..." << endl << endl;
 }
 
 void Netbook::printInstalacion()
 {
-  cout << "Instalando software necesario para la desktop" << endl;
+  cout << "Instalando software necesario para la netbook..." << endl << endl;
 }
 
 void Netbook::printEmpaquetado()
 {
-  cout << "Empaquetando desktop" << endl;
+  cout << "Empaquetando netbook" << endl;
 }

@@ -10,17 +10,17 @@ Desktop::Desktop()
 
 void Desktop::printComponentes()
 {
-  cout << "Juntando componentes necesarios para construir la desktop" << endl;
+  cout << "Juntando componentes necesarios para construir la desktop..." << endl << endl;
 }
 
 void Desktop::printEnsamblado()
 {
-  cout << "Ensamblando componentes para la desktop" << endl;
+  cout << "Ensamblando componentes para la desktop..." << endl << endl;
 }
 
 void Desktop::printInstalacion()
 {
-  cout << "Instalando software necesario para la desktop" << endl;
+  cout << "Instalando software necesario para la desktop..." << endl << endl;
 }
 
 void Desktop::printEmpaquetado()

@@ -10,20 +10,20 @@ Tablet::Tablet()
 
 void Tablet::printComponentes()
 {
-  cout << "Juntando componentes necesarios para construir la desktop" << endl;
+  cout << "Juntando componentes necesarios para construir la tablet..." << endl << endl;
 }
 
 void Tablet::printEnsamblado()
 {
-  cout << "Ensamblando componentes para la desktop" << endl;
+  cout << "Ensamblando componentes para la tablet..." << endl << endl;
 }
 
 void Tablet::printInstalacion()
 {
-  cout << "Instalando software necesario para la desktop" << endl;
+  cout << "Instalando software necesario para la tablet..." << endl << endl;
 }
 
 void Tablet::printEmpaquetado()
 {
-  cout << "Empaquetando desktop" << endl;
+  cout << "Empaquetando tablet" << endl;
 }

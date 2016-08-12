@@ -10,17 +10,17 @@ Laptop::Laptop()
 
 void Laptop::printComponentes()
 {
-  cout << "Juntando componentes necesarios para construir la laptop" << endl;
+  cout << "Juntando componentes necesarios para construir la laptop..." << endl << endl;
 }
 
 void Laptop::printEnsamblado()
 {
-  cout << "Ensamblando componentes para la laptop" << endl;
+  cout << "Ensamblando componentes para la laptop..." << endl << endl;
 }
 
 void Laptop::printInstalacion()
 {
-  cout << "Instalando software necesario para la laptop" << endl;
+  cout << "Instalando software necesario para la laptop..." << endl << endl;
 }
 
 void Laptop::printEmpaquetado()
