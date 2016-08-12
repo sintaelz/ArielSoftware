@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Laptop : public Laptop
+class Laptop
 {
 public:
   Laptop();
@@ -11,4 +11,4 @@ public:
   void printEnsamblado();
   void printInstalacion();
   void printEmpaquetado();
-}
+};
