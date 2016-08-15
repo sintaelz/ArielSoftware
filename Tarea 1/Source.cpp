@@ -1,11 +1,9 @@
-#include "Laptop.h"
-#include "Desktop.h"
-#include "Netbook.h"
-#include "Tablet.h"
+#include "Computadoras.h"
+#include "API.h"
 #include <stdio.h>
-#include <string>
 
 int choice;
+bool askReceipt();
 
 int main()
 {
@@ -17,34 +15,55 @@ int main()
     cout << "Tu numero no esta entre el 1 y el 4, favor de reingresar el numero" << endl;
     cin >> choice;
   }
-
   cout << endl;
+
+  API fabrica;
   switch (choice)
   {
     case 1:
     {
-      Laptop *l1 = new Laptop();
+      Computadoras l1 = fabrica.crear("Laptop");
       cout << endl;
+      if(askReceipt())
+        l1.printReceipt();
       break;
     }
     case 2:
     {
-      Desktop *d1 = new Desktop();
+      Computadoras d1 = fabrica.crear("Desktop");
       cout << endl;
+      if(askReceipt())
+        d1.printReceipt();
       break;
     }
     case 3:
     {
-      Netbook *n1 = new Netbook();
+      Computadoras n1 = fabrica.crear("Netbook");
       cout << endl;
+      if(askReceipt())
+        n1.printReceipt();
       break;
     }
     case 4:
     {
-      Tablet *t1 = new Tablet();
+      Computadoras t1 = fabrica.crear("Tablet");
       cout << endl;
+      if(askReceipt())
+        t1.printReceipt();
       break;
     }
   }
+}
 
+bool askReceipt()
+{
+  char choiceWord;
+  cout << "Desea ver su recibo y el resultado del dispositivo? (presione 'y' o 'n')" << endl;
+  cin >> choiceWord;
+
+  if (choiceWord == 'y')
+  return true;
+
+  else
+  return false;
 }
