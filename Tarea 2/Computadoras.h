@@ -6,6 +6,7 @@ using namespace std;
 class Computadoras
 {
 public:
+  virtual Computadoras* clone() = 0;
   virtual void printComponentes() = 0;
   virtual void printEnsamblado() = 0;
   virtual void printInstalacion() = 0;
@@ -19,7 +20,16 @@ public:
   }
 };
 
-class Laptop : public Computadoras
+template<class T>
+class clonePadre : public Computadoras
+{
+  virtual Computadoras* clone()
+  {
+    return new T(dynamic_cast<T&>(*this));
+  }
+};
+
+class Laptop : public clonePadre<Laptop>
 {
   friend class concreteCreator;
 private:
@@ -43,7 +53,7 @@ public:
   }
 };
 
-class Desktop : public Computadoras
+class Desktop : public clonePadre<Desktop>
 {
   friend class concreteCreator;
 private:
@@ -67,7 +77,7 @@ public:
   }
 };
 
-class Tablet : public Computadoras
+class Tablet : public clonePadre<Tablet>
 {
   friend class concreteCreator;
 private:
@@ -91,7 +101,7 @@ public:
   }
 };
 
-class Netbook : public Computadoras
+class Netbook : public clonePadre<Netbook>
 {
   friend class concreteCreator;
 private:
