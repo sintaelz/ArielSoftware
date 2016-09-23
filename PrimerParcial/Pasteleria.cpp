@@ -120,7 +120,6 @@ class clonePadre : public Product
 
 
 // Clases de herencia y variaciones
-
 class tresLeches : public clonePadre<tresLeches>
 {
     friend class ConcreteCreator;
@@ -224,7 +223,6 @@ private:
 
 int main()
 {
-  /*
   //Crear Pasteles Prueba
   ConcreteCreator* client = ConcreteCreator::GetInstance();
   Product* pastelTresLeches = client->createProduct(1);
@@ -253,7 +251,7 @@ int main()
   Product* pastelPruebaSearch = inventory.getElementName("Sacher");
   pastelPruebaSearch->crearPastel();
 
-  delete i;*/
+  delete i;
 
   return 0;
 }
