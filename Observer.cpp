@@ -4,24 +4,24 @@ using namespace std;
 
 class divObserver
 {
-  int m_div;
+  int m_mult;
 public:
-  divObserver(int div)
+  divObserver(int mult)
   {
-    m_div = div;
+    m_mult = mult;
   }
   void update(int value)
   {
-    cout << "The new value for m_div is " << m_div << " and m_div / your value = " << value/m_div << endl;
+    cout << "The new value is " << value << " and m_mult * value = " << value*m_mult << endl;
   }
 };
 
 class Subject
 {
   int subValue;
-  divObserver m_div_obj;
+  divObserver m_mult_obj;
 public:
-  Subject(): m_div_obj(4){};
+  Subject(): m_mult_obj(4){};
   void set_value(int value)
   {
     subValue = value;
@@ -29,7 +29,7 @@ public:
   }
   void notify()
   {
-    m_div_obj.update(subValue);
+    m_mult_obj.update(subValue);
   }
 
 };
