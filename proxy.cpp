@@ -1,50 +1,49 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 
-class ArrayInts;
+class ArrayPositiveInts;
 
 class Proxy
 {
 private:
-  ArrayInts& arr;
-  int index;
+    ArrayPositiveInts& arr;
+    int idx;
+
 public:
-  friend class ArrayInts;
-  Proxy(ArrayInts& arr, int index) : arr(arr), index(index){}
+  friend class ArrayPositiveInts;
+    Proxy(ArrayPositiveInts& arr, int idx)
+    : arr(arr), idx(idx){}
 
-  Proxy& operator = (int value);
+    Proxy& operator=(int value);
 
-  friend ostream& operator << (ostream& op, Proxy& yo);
+    friend ostream& operator << (ostream& op, Proxy& yo);
 };
 
-class ArrayInts
+class ArrayPositiveInts
 {
 private:
-  int *list;
-  int size;
+    int* values;
+    int size;
 public:
-  friend class Proxy;
-    ArrayInts()
+    friend class Proxy;
+    ArrayPositiveInts()
     {
-      size = 100;
-      list = new int[size];
+        size = 100;
+        values = new int[size];
     }
-    Proxy operator[](int index)
+    int& operator[](int idx) //se devuelve un elemento del arreglo por referencia
     {
-      if(index >= 0)
-      {
-        return Proxy(*this, index);
-      }
-      else
-      {
-        cout << "No se aceptan numeros negativos en el inciso" << endl;
-        return Proxy(*this, index);
-      }
+        if(idx < 0)
+        {
+          cout << "No se aceptan indices negativos" << endl;
+          return values[0];
+        }
+        Proxy temp(*this, idx); //ejecuto el proxy
+        return values[idx];  //devuelvo el elemento
     }
-    int getList(int index)
+    int getList(int idx)
     {
-      return *(list+index);
+      return *(values+idx);
     }
 };
 
@@ -54,7 +53,7 @@ Proxy& Proxy::operator=(int value)
     if (value >= 0)
     {
       //arr[index] = value;
-      *(arr.list + index) = value;
+      *(arr.values + idx) = value;
       return *this;
     }
     else
@@ -67,14 +66,16 @@ Proxy& Proxy::operator=(int value)
 
 ostream& operator << (ostream& op, Proxy& yo)
 {
-  op << yo.arr.getList(yo.index);
+  op << yo.arr.getList(yo.idx);
   return op;
 };
 
 int main()
 {
-  ArrayInts list;
-  list[0] = 10;
-  list[1] = -10;
-  list[-3] = 15;
+    ArrayPositiveInts a;
+    a[0] = 1;
+    a[1] = -5;
+    a[-3] = 5;
+    //cout << a[0];
+    //cout << a[1];
 }
